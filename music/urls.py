@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
+from albums import views as album_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('allAlblums/', models.site.urls)
+    #index is for homepage, standard
+    path('', album_views.index, name='home'),
+    #path('albums/add/', albums_views.add_album, name='add_album'),
 ]
 
 if settings.DEBUG:

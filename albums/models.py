@@ -1,13 +1,13 @@
 from django.db import models
 
 # Create your models here.
-class allAlbums(models.Model):
-    artistname = models.CharField(max_length=255)
-    albumtitle = models.CharField(max_length=255)
+class Album(models.Model):
+    artist = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
     released = models.DateField()
 
     def __str__(self):
-      return f"{self.albumtitle}"
+      return f"{self.title}"
 
 class Users(models.Model):
   pass
