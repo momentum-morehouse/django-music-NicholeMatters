@@ -10,5 +10,5 @@ class albumForm(forms.ModelForm):
             'released',
             
         ]
-        # widgets = {'birthday': forms.SelectDateWidget()
-        # }
+        widgets = {'released': forms.SelectDateWidget()
+        }

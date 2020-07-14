@@ -23,5 +23,4 @@ def delete_albums(request, pk):
     if request.method == 'POST':
         album.delete()
         return redirect(to='list_albums')
-    return render(request, "albums/delete_albums.html",
-                  {"album": album})
+    return render(request, "albums/delete_albums.html", {"albums": album})
