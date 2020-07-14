@@ -22,7 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #index is for homepage, standard
     path('', album_views.index, name='home'),
-    #path('albums/add/', albums_views.add_album, name='add_album'),
+    path('albums/add/', album_views.add_albums, name='add_albums'),
+    path('albums/<int:pk>/delete/', album_views.delete_albums, name='delete_albums'),
 ]
 
 if settings.DEBUG:
