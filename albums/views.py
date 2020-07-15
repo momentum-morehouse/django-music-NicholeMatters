@@ -22,5 +22,5 @@ def delete_albums(request, pk):
     album = get_object_or_404(Album, pk=pk)
     if request.method == 'POST':
         album.delete()
-        return redirect(to='list_albums')
-    return render(request, "albums/delete_albums.html", {"albums": album})
+        return redirect(to='index')
+    return render(request, "albums/delete_albums.html", context={"albums": album})

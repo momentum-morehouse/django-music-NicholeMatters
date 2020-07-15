@@ -1,0 +1,12 @@
+.everything{
+  border: 2px solid red;
+}
+
+.albums{
+  backround-color: orange;
+}
+
+
+.flex flex-wrap{
+  border: 2px solid black;
+}

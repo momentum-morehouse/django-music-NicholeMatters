@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>All Albums</h1>
+<div class="everything">
+<h1><strong>All Albums</strong></h1>
 <p><a href="{% url 'add_albums' %}">Add New Album</a></p>
-<p><a href="{% url 'delete_albums' %}">Delete Album</a></p>
 
 
-<div class="flex flex-wrap">
+<div clas="albums">
+<div class="flex flex-wrap" >
   {% for album in albums %}
   <div class="w-33 pa3">
     <h2>{{ album.title }}</h2>
@@ -27,8 +28,11 @@
     </div>
     {% endif %}
 
-    
+    <p><a href="{% url 'delete_albums' pk=album.pk %}">Delete Album</a></p>
+
   </div>
   {% endfor %}
-</div>  
+</div> 
+</div> 
+</div>
 {% endblock %}
