@@ -1,12 +1,26 @@
-.everything{
+h1 {
+  text-align: center;
+  color: gold;
+  background: darkgrey;
+}
+
+a {
+  color:red;
+  background: darkgrey;
+}
+
+.everything {
+  display: flex;
   border: 2px solid red;
+  align-items: flex-start;
 }
 
-.albums{
-  backround-color: orange;
+.w-33 pa3 {
+  color: orange;
 }
 
 
-.flex flex-wrap{
+.loop {
+  color: green
   border: 2px solid black;
 }

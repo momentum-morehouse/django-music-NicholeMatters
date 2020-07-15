@@ -1,38 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="everything">
+
 <h1><strong>All Albums</strong></h1>
 <p><a href="{% url 'add_albums' %}">Add New Album</a></p>
 
+  <div class="everything">
+    <div clas="albums">
+        <div class="flex flex-wrap" class="loop">
+          {% for album in albums %}
+          <div class="w-33 pa3">
+          <h2>{{ album.title }}</h2>
+          
 
-<div clas="albums">
-<div class="flex flex-wrap" >
-  {% for album in albums %}
-  <div class="w-33 pa3">
-    <h2>{{ album.title }}</h2>
 
+          {% if album.artist %}
+          <div class="flex">
+            <div class="pr2"></div>
+            <div>{{ album.artist }}</div>
+          </div>
+          {% endif %}
 
+          {% if album.released %}
+          <div class="flex">
+            <div class="pr2"></div>
+            <div>{{ album.released }}</div>
+          </div>
+          {% endif %}
 
-    {% if album.artist %}
-    <div class="flex">
-      <div class="pr2"></div>
-      <div>{{ album.artist }}</div>
-    </div>
-    {% endif %}
+          <p><a href="{% url 'delete_albums' pk=album.pk %}">Delete Album</a></p>
 
-    {% if album.released %}
-    <div class="flex">
-      <div class="pr2"></div>
-      <div>{{ album.released }}</div>
-    </div>
-    {% endif %}
-
-    <p><a href="{% url 'delete_albums' pk=album.pk %}">Delete Album</a></p>
-
-  </div>
-  {% endfor %}
-</div> 
-</div> 
+          </div>
+          {% endfor %}
+        </div> 
+  </div> 
 </div>
 {% endblock %}
