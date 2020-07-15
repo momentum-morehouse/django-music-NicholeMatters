@@ -4,23 +4,46 @@ h1 {
   background: darkgrey;
 }
 
-a {
-  color:red;
+h2 {
+  display: flex;
+  text-align: center;
+  color: red;
+  background: white;
+  border-radius: 10%;
+}
+
+a.add {
+  display: flex;
+  color:black;
   background: darkgrey;
+  text-align: center;
 }
 
 .everything {
   display: flex;
+  flex-wrap: wrap; 
+  flex-direction: row;
   border: 2px solid red;
   align-items: flex-start;
+  background: lightgrey;
+  justify-content: space-around;
+  
 }
 
-.w-33 pa3 {
-  color: orange;
-}
-
-
-.loop {
-  color: green
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  color: green;
   border: 2px solid black;
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  border-radius: 10%;
+}
+
+
+.albums {
+  background: yellow
+  border: 2px solid pink;
 }

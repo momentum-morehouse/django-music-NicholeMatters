@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Album, Users
-from .forms import albumForm
+from .models import Album, Details
+from .forms import albumForm, DetailForm
 
 # Create your views here.
 def index(request):
@@ -24,3 +24,22 @@ def delete_albums(request, pk):
         album.delete()
         return redirect(to='index')
     return render(request, "albums/delete_albums.html", context={"albums": album})
+
+def albums_detail(request, pk):
+  albums = get_object_or_404(Album, pk=pk)
+  return render(request, "albums/albums_detail.html", {"albums": albums})
+
+
+def add_details(request, pk):
+    albums = get_object_or_404(Album, pk=pk)
+    if request.method == 'GET':
+        form = DetailForm()
+    else:
+        form = DetailForm(data=request.POST)
+        if form.is_valid():
+            new_details = form.save(commit=False)
+            new_details.albums = albums
+            new_details.save()
+            return redirect(to='list_albums', pk=pk)
+
+    return render(request, "albums/add_details.html", {"form": form, "albums": albums})
