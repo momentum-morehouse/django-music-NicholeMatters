@@ -26,9 +26,13 @@ urlpatterns = [
     path('', album_views.index, name='list_albums'),
     path('albums/add/', album_views.add_albums, name='add_albums'),
     path('albums/<int:pk>/delete/', album_views.delete_albums, name='delete_albums'),
+
+
     path('albums/<int:pk>/detail/', album_views.albums_detail, name='albums_detail'), 
+
     path('albums/<int:pk>/add_details', album_views.add_details, name='add_details'),
-    path('albums/<int:pk>/edit/', album_views.edit_album, name='edit_album'),
+
+    path('albums/<int:pk>/edit/', album_views.edit_albums, name='edit_albums'),
 ]
 
 if settings.DEBUG:

@@ -47,7 +47,7 @@ def add_details(request, pk):
     return render(request, "albums/add_details.html", {"form": form, "albums": albums})
 
 
-def edit_album(request, pk):
+def edit_albums(request, pk):
     album = get_object_or_404(Album, pk=pk)
     if request.method == 'GET':
         form = albumForm(instance=album)
