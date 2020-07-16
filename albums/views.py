@@ -43,3 +43,19 @@ def add_details(request, pk):
             return redirect(to='list_albums', pk=pk)
 
     return render(request, "albums/add_details.html", {"form": form, "albums": albums})
+
+
+def edit_album(request, pk):
+    album = get_object_or_404(Album, pk=pk)
+    if request.method == 'GET':
+        form = DetailForm(instance=album)
+    else:
+        form = DetailForm(data=request.POST, instance=album)
+        if form.is_valid():
+            form.save()
+            return redirect(to='list_albums')
+
+    return render(request, "albums/edit_albums.html", {
+        "form": form,
+        "album": album
+    })

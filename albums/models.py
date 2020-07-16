@@ -5,6 +5,7 @@ class Album(models.Model):
     artist = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
     released = models.DateField()
+    image_url = models.TextField(null=True, blank=True)
 
     def __str__(self):
       return f"{self.title} by {self.artist}"

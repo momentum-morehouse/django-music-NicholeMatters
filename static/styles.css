@@ -5,9 +5,8 @@ h1 {
 }
 
 h2 {
-  display: flex;
   text-align: center;
-  color: red;
+  color: purple;
   background: white;
   border-radius: 10%;
 }
@@ -22,24 +21,26 @@ a.add {
 .everything {
   display: flex;
   flex-wrap: wrap; 
+  flex-flow: row wrap;
   flex-direction: row;
-  border: 2px solid red;
+  border: 2px dashed red;
   align-items: flex-start;
-  background: lightgrey;
-  justify-content: space-around;
-  
+  background: grey;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .flex {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: wrap; 
   text-align: center;
-  color: green;
-  border: 2px solid black;
+  color: white;
+  border: 2px solid gold;
   width: 250px;
   height: 250px;
   text-align: center;
   border-radius: 10%;
+  background:pink;
 }
 
 
