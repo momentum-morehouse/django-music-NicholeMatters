@@ -37,6 +37,7 @@ ALLOWED_HOSTS = ['django-music-NicholeMatters.nicholematters.repl.co', 'django-m
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

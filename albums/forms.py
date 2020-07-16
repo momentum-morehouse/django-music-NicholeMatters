@@ -8,6 +8,7 @@ class albumForm(forms.ModelForm):
             'title',
             'artist',
             'released',
+            'image_url',
             
         ]
         widgets = {'released': forms.SelectDateWidget()

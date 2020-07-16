@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<body>
     <h1><strong>All Albums</strong></h1>
     <p><a class="add" href="{% url 'add_albums' %}">Add New Album</a></p>
 
@@ -9,7 +9,7 @@
           
           {% for album in albums %}
           <div class="flex">
-          <img src="{{albums.image_url}}" height='250' width= '250' >
+          <img src="{{ album.image_url }}" height='150' width= '150' class="images" >
           <h2> "{{ album.title }}" </h2>
           <br>
           {% if album.artist %}
@@ -20,7 +20,7 @@
             <div>released: {{ album.released }}</div>
           {% endif %}
 
-          <p><a href="{% url 'add_details' pk=album.pk %}">Album Details |  </a></p>
+          <p><a href="{% url 'albums_detail' pk=album.pk %}">Album Details |  </a></p>
           
           <p><a href="{% url 'edit_album' pk=album.pk %}">  Edit Album</a></p>
           <br>
@@ -31,4 +31,5 @@
           {% endfor %}
        
   </div>
+</body>
 {% endblock %}
