@@ -6,6 +6,10 @@ class Album(models.Model):
     title = models.CharField(max_length=255)
     released = models.DateField()
     image_url = models.TextField(null=True, blank=True)
+    track_list = models.TextField(null=True, blank=True)
+    
+    
+    order_with_respect_to = 'title'
 
     def __str__(self):
       return f"{self.title} by {self.artist}"
@@ -13,10 +17,10 @@ class Album(models.Model):
 class Users(models.Model):
   pass
 
-class Details(models.Model):
-  detail = models.ForeignKey(Album, on_delete=models.CASCADE, related_name="details")
-  text = models.TextField(null=True, blank=True)
-  date_added = models.DateTimeField(auto_now_add=True)
+# class Details(models.Model):
+#   detail = models.ForeignKey(Album, on_delete=models.CASCADE, related_name="details")
+#   text = models.TextField(null=True, blank=True)
+#   date_added = models.DateTimeField(auto_now_add=True)
 
-  def __str__(self):
-    return f"{self.text}"
+#   def __str__(self):
+#     return f"{self.text}"

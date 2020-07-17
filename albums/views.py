@@ -1,13 +1,14 @@
 #from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Album, Details
-from .forms import albumForm, DetailForm
+from .models import Album
+from .forms import albumForm
 
 # Create your views here.
 #@login_required
 def index(request):
-  all_albums = Album.objects.all()
+  all_albums = Album.objects.all().order_by('title')
   return render(request, 'albums/list_albums.html', context={'albums':all_albums})
+  
 
 def add_albums(request):
     if request.method == 'GET':
@@ -24,12 +25,12 @@ def delete_albums(request, pk):
     album = get_object_or_404(Album, pk=pk)
     if request.method == 'POST':
         album.delete()
-        return redirect(to='index')
-    return render(request, "albums/delete_albums.html", context={"albums": album})
+        return redirect(to='list_albums')
+    return render(request, "albums/delete_albums.html", {"album": album})
 
 def albums_detail(request, pk):
-  albums = get_object_or_404(Album, pk=pk)
-  return render(request, "albums/albums_detail.html", {"albums": albums})
+  album = get_object_or_404(Album, pk=pk)
+  return render(request, "albums/albums_detail.html", {"album": album})
 
 
 def add_details(request, pk):
@@ -53,11 +54,10 @@ def edit_albums(request, pk):
         form = albumForm(instance=album)
     else:
         form = albumForm(data=request.POST, instance=album)
+        
         if form.is_valid():
             form.save()
-            return redirect(to='list_albums', pk=pk)
+            return redirect(to='list_albums')
 
     return render(request, "albums/edit_albums.html", {
-        "form": form,
-        "albums": album
-    })
+        "form": form, "album": album})

@@ -9,11 +9,11 @@
   <form action="{% url 'add_albums' %}" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <div>
-      <button type="submit">Add Albums</button>
+    <div >
+      <button type="submit">Add Album</button>
     </div>
   </form>
-  <p><a href="{% url 'list_albums' %}">All Albums</a></p>
+  <button><a class="add" href="{% url 'list_albums' %}">return to All Albums</a></button>
 </div>
 
 </body>

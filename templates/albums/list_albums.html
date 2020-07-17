@@ -16,12 +16,10 @@
           <p> Released: {{ album.released }}</p>
         
           <p>
-          <!-- <a href="{% url 'albums_detail' pk=album.pk %}">Album Details |  </a>
-          <br> -->
+          <button class="button2"><a class="ablumsstuff" href="{% url 'albums_detail' pk=album.pk %}">Album Details</a></button>
           <button class="button2"><a class="ablumsstuff"
-           href="{% url 'edit_albums' pk=album.pk %}"> Edit Album </a></button2>
-        
-         <button class="button2"> <a class="ablumsstuff" href="{% url 'delete_albums' pk=album.pk %}">Delete Album</a></button>
+           href="{% url 'edit_albums' pk=album.pk %}"> Edit Album </a></button>
+          <button class="button2"> <a class="ablumsstuff" href="{% url 'delete_albums' pk=album.pk %}">Delete Album</a></button>
           </p></h4>
           
           </div>

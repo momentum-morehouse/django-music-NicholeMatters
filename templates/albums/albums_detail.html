@@ -1,40 +1,29 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% block content %}
 
-<div class="w-33 pa3">
-	<h2>{{ album.title }}</h2>
-{% for album in albums %}
-      <div>
-        {{ album.artist }}<br />
+
+
+      <div class="detail_page"> "{{ album.title }}" </div>
+      <img class="image" src="{{ album.image_url }}" >
+      <div class="artist_date">By: {{ album.artist }}
+        {% if album.released %}
+         <div>{{ album.released }}</div>
+        {% endif %}</div>
         
-      </div>
-    
+        
+       
+       <div class="track_details">
+          <b>Track List:</b>
+            {% if note in album.track_list %}
+            {{album.track_list}}
+            {% endif %}
+           
+      {{ album.track_list }} 
 
-    {% if album.released %}
-    
-      <div>{{ album.released }}</div>
-    
-    {% endif %}
-
-
-    {% if album.details %}
-    <h3>details</h3>
-    <div class="flex">
-      <div class="pr2 list">
-        {% if note in album.details.all %}
-        <li>{{note}}</li>
-        {% endif %}
-    {% endif %}    
-
- {% endfor %}
-      </div>
+      
     </div>
+    <button><a class="add" href="{% url 'list_albums' %}">return to All Albums</a></button>
 
 
-    
-
-    
-
-
-  </div>
 
 {% endblock %}

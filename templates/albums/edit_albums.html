@@ -4,11 +4,12 @@
 <h1>Edit Albums</h1>
 
 <div>
-  <form action="{% url 'edit_albums' pk=albums.pk %}" method="POST">
+
+  <form action="{% url 'edit_albums' pk=album.pk %}" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
     <div>
-      <button type="submit">Update Albums</button>
+      <button type="submit">Update Album</button>
       <button><a class="add" href="{% url 'list_albums' %}">return to All Albums</a></button>
     </div>
   </form>
