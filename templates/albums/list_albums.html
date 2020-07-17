@@ -3,7 +3,7 @@
 {% block content %}
 
     <h1><strong>Music Collection</strong></h1>
-    <p><a class="add" href="{% url 'add_albums' %}">Add New Album</a></p>
+    <p><button><a class="add" href="{% url 'add_albums' %}">Add New Album</a></button></p>
 
   <div class="everything">
           
@@ -12,16 +12,16 @@
           
           <h2> "{{ album.title }}" </h2>
           <img src="{{ album.image_url }}" height='200' width='250'>
-          <h4>by: {{ album.artist }}
+          <h4>By: {{ album.artist }}
           <p> Released: {{ album.released }}</p>
         
           <p>
           <!-- <a href="{% url 'albums_detail' pk=album.pk %}">Album Details |  </a>
           <br> -->
-          <a class="ablumsstuff"
-           href="{% url 'edit_albums' pk=album.pk %}"> Edit Album </a>
-          <br>
-          <a class="ablumsstuff" href="{% url 'delete_albums' pk=album.pk %}">Delete Album</a>
+          <button class="button2"><a class="ablumsstuff"
+           href="{% url 'edit_albums' pk=album.pk %}"> Edit Album </a></button2>
+        
+         <button class="button2"> <a class="ablumsstuff" href="{% url 'delete_albums' pk=album.pk %}">Delete Album</a></button>
           </p></h4>
           
           </div>
