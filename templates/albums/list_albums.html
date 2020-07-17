@@ -11,12 +11,11 @@
           <div class="flex">
           
           <h2> "{{ album.title }}" </h2>
-          <br>
-            <div class="artist">by: {{ album.artist }}</div>
-          <img src="{{ album.image_url }}" height='200' width= '250' class="images" >
-            <div class="date">  Released: {{ album.released }}</div>
-          <br>
-
+          <img src="{{ album.image_url }}" height='200' width='250'>
+          <p><h4>by: {{ album.artist }}</p>
+          <p> Released: {{ album.released }}</h4></p>
+        
+<br>
           <p>
           <!-- <a href="{% url 'albums_detail' pk=album.pk %}">Album Details |  </a>
           <br> -->
@@ -24,6 +23,7 @@
           <br>
           <a href="{% url 'delete_albums' pk=album.pk %}">Delete Album</a>
           </p>
+          
           </div>
 
           <br>
