@@ -12,17 +12,17 @@
           
           <h2> "{{ album.title }}" </h2>
           <img src="{{ album.image_url }}" height='200' width='250'>
-          <p><h4>by: {{ album.artist }}</p>
-          <p> Released: {{ album.released }}</h4></p>
+          <h4>by: {{ album.artist }}
+          <p> Released: {{ album.released }}</p>
         
-<br>
           <p>
           <!-- <a href="{% url 'albums_detail' pk=album.pk %}">Album Details |  </a>
           <br> -->
-          <a href="{% url 'edit_albums' pk=album.pk %}"> Edit Album </a>
+          <a class="ablumsstuff"
+           href="{% url 'edit_albums' pk=album.pk %}"> Edit Album </a>
           <br>
-          <a href="{% url 'delete_albums' pk=album.pk %}">Delete Album</a>
-          </p>
+          <a class="ablumsstuff" href="{% url 'delete_albums' pk=album.pk %}">Delete Album</a>
+          </p></h4>
           
           </div>
 

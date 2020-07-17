@@ -34,8 +34,8 @@ h4 {
   color:  purple;
   background: white;
   border-radius: 10%;
-  font-size: 30px;
-  width: 400px;
+  font-size: 25px;
+  width: 350px;
 }
 
 a.add {
@@ -45,8 +45,9 @@ a.add {
   font-size: 20px;
 }
 
-a {
-  color: white;
+a.ablumsstuff {
+  color: black;
+  font-size: 15px;
 }
 
 .everything {
