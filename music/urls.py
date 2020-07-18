@@ -33,7 +33,7 @@ urlpatterns = [
 
     # path('albums/<int:pk>/add_details', album_views.add_details, name='add_details'),
 
-    path('books', book_views.book_index, name='books_home'),
+    path('books', book_views.book_index, name='book_index'),
     path('books/add/', book_views.add_book, name='add_book'),
 ]
 

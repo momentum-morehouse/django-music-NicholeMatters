@@ -5,7 +5,7 @@ from .forms import bookForm
 # Create your views here.
 def book_index(request):
   books = Book.objects.all().order_by('author')
-  return render(request, 'books/home.html', context={'books': books})
+  return render(request, 'books/book_index.html', context={'books': books})
 
   
 def add_book(request):
@@ -15,6 +15,7 @@ def add_book(request):
         form = bookForm(data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect(to='list_albums')
+            return redirect(to='book_index')
 
     return render(request, "books/add_book.html", {"form": form})
+
