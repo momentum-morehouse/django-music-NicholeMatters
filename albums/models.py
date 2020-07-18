@@ -14,8 +14,23 @@ class Album(models.Model):
     def __str__(self):
       return f"{self.title} by {self.artist}"
 
+    
+
 class Users(models.Model):
   pass
+      
+class Book(models.Model):
+    author = models.CharField(max_length=255)
+    book_title = models.CharField(max_length=255)
+    date_published = models.DateField()
+    book_cover = models.TextField(null=True, blank=True)
+    chapter_list = models.TextField(null=True, blank=True)
+    
+    
+    order_with_respect_to = 'author'
+
+    def __str__(self):
+      return f"{self.book_title} by {self.author}"
 
 # class Details(models.Model):
 #   detail = models.ForeignKey(Album, on_delete=models.CASCADE, related_name="details")
@@ -24,3 +39,4 @@ class Users(models.Model):
 
 #   def __str__(self):
 #     return f"{self.text}"
+

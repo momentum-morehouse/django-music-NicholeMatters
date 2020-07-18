@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
 from albums import views as album_views
+from books import views as book_views
 
 urlpatterns = [
     path('accounts/', include( 'registration.backends.simple.urls')),
@@ -28,13 +29,12 @@ urlpatterns = [
     path('albums/add/', album_views.add_albums, name='add_albums'),
     path('albums/<int:pk>/delete/', album_views.delete_albums, name='delete_albums'),
     path('albums/<int:pk>/edit/', album_views.edit_albums, name='edit_albums'),
-
-
     path('albums/<int:pk>/detail/', album_views.albums_detail, name='albums_detail'), 
 
     # path('albums/<int:pk>/add_details', album_views.add_details, name='add_details'),
 
-    
+    path('books', book_views.book_index, name='books_home'),
+    path('books/add/', book_views.add_book, name='add_book'),
 ]
 
 if settings.DEBUG:

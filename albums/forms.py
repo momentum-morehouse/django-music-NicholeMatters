@@ -1,5 +1,5 @@
 from django import forms
-from .models import Album
+from .models import Album, Book
 
 class albumForm(forms.ModelForm):
     class Meta:
@@ -17,7 +17,18 @@ class albumForm(forms.ModelForm):
         'date_released': forms.DateInput(format=('%m/%d/%Y'), attrs={'class':'form-control', 'placeholder':'Select a date', 'type':'date'}),
         }
 
-# class DetailForm(forms.ModelForm):
-#   class Meta:
-#     model = Details
-#     fields = ['text']
+class bookForm(forms.ModelForm):
+    class Meta:
+        model = Book
+        fields = [
+            'book_title',
+            'author',
+            'date_published',
+            'book_cover',
+            'chapter_list',
+        ]
+      
+
+        widgets = {
+        'date_published': forms.DateInput(format=('%m/%d/%Y'), attrs={'class':'form-control', 'placeholder':'Select a date', 'type':'date'}),
+        }

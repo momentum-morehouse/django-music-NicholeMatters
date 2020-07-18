@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     # Project-specific
     'users', 
     'albums',
+    'books',
 ]
 
 MIDDLEWARE = [

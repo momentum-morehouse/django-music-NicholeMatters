@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
 {% block content %}
 
-
+<button><a class="add" href="{% url 'list_albums' %}">return to All Albums</a></button>
 
       <div class="detail_page"> "{{ album.title }}" </div>
       <img class="image" src="{{ album.image_url }}" >
