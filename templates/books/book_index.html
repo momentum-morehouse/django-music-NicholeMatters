@@ -2,6 +2,8 @@
 
 {% block content %}
 
+  <div class="book_body">
+
     <h1><strong>Book Collection</strong></h1>
     <p><button><a class="add" href="{% url 'add_book' %}">Add New Book</a></button></p>
     <button><a class="add" href="{% url 'list_albums' %}">Music Collection</a></button>
@@ -9,12 +11,12 @@
   <div class="everything">
           
           {% for book in books %}
-          <div class="flex">
+          <div class="flex2">
           
-          <h2> "{{ books.book_title }}" </h2>
-          <img src="{{ books.book_cover }}" height='200' width='250'>
-          <h4>By: {{ books.author }}
-          <p> Published: {{ books.published_year }}</p>
+          <h2> "{{ book.book_title }}" </h2>
+          <img src="{{ book.book_cover }}" height='200' width='250'>
+          <h4>By: {{ book.author }}
+          <p> Published: {{ book.published_year }}</p>
         
           <p>
          
