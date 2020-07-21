@@ -21,7 +21,9 @@
           <button class="button2"><a class="ablumsstuff" href="{% url 'albums_detail' pk=album.pk %}">Album Details</a></button>
           <button class="button2"><a class="ablumsstuff"
            href="{% url 'edit_albums' pk=album.pk %}"> Edit Album </a></button>
-          <button class="button2"> <a class="ablumsstuff" href="{% url 'delete_albums' pk=album.pk %}">Delete Album</a></button>
+
+          <button class="delete_alert button2 ablumsstuff" data-album={{album.pk}}> Delete Album</button>
+
           </p></h4>
           
           </div>

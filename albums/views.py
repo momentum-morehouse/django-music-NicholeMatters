@@ -1,7 +1,10 @@
 #from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+# using js file
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Album, Book
 from .forms import albumForm, bookForm
+
 
 # Create your views here.
 #@login_required
@@ -25,8 +28,12 @@ def delete_albums(request, pk):
     album = get_object_or_404(Album, pk=pk)
     if request.method == 'POST':
         album.delete()
-        return redirect(to='list_albums')
-    return render(request, "albums/delete_albums.html", {"album": album})
+        # message for JS fetch
+        return JsonResponse({"deleted": 'true'})
+        # django commands
+        # return redirect(to='list_albums')
+    # return render(request, "albums/delete_albums.html", {"album": album})
+
 
 def albums_detail(request, pk):
   album = get_object_or_404(Album, pk=pk)

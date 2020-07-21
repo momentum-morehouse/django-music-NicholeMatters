@@ -9,7 +9,8 @@ class Album(models.Model):
     track_list = models.TextField(null=True, blank=True)
     
     
-    order_with_respect_to = 'title'
+    class Meta:
+      order_with_respect_to = 'title'
 
     def __str__(self):
       return f"{self.title} by {self.artist}"
@@ -26,8 +27,8 @@ class Book(models.Model):
     book_cover = models.TextField(null=True, blank=True)
     chapter_list = models.TextField(null=True, blank=True)
     
-    
-    order_with_respect_to = 'author'
+    class Meta:
+      order_with_respect_to ='author'
 
     def __str__(self):
       return f"{self.book_title} by {self.author}"
